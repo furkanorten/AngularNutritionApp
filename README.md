@@ -1,6 +1,19 @@
 # AngularNutritionApp
 
+### Web application with Angular where you can get nutrition informations of foods/drinks
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+
+## Firebase deployment link
+
+https://fortennutritionapp.web.app/
+
+## Nutrition API
+
+https://api-ninjas.com/api/nutrition
+
+## Installing packages
+
+Run `npm install` for installing node modules.
 
 ## Development server
 

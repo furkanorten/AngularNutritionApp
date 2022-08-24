@@ -3,9 +3,10 @@
 ### Web application with Angular where you can get nutrition informations of foods/drinks
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## Firebase deployment link
+## Firebase deployment links
 
 https://fortennutritionapp.web.app/
+https://fortennutritionapp.firebaseapp.com/
 
 ## Nutrition API
 

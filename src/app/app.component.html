@@ -1,0 +1,43 @@
+<div class="container mt-5 text-center">
+  <h2 class="title">Nutrition App</h2>
+</div>
+<div class="container mt-5 d-flex justify-content-center">
+  <mat-card class="example-card">
+    <div class="container d-flex flex-row align-items-center">
+      <mat-card-content>
+        <form class="d-flex flex-column align-items-center" [formGroup]="nutritionForm">
+          <mat-form-field appearance="outline">
+            <mat-label>Amount(grams)</mat-label>
+            <input matInput formControlName="amount">
+            <mat-error>
+              <p *ngIf="control['amount'].errors && control['amount'].errors['required']">Amount is required</p>
+              <p *ngIf="control['amount'].errors && control['amount'].errors['pattern']">Amount must be a number</p>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Food/Drink</mat-label>
+            <input matInput formControlName="food">
+            <mat-error>
+              <p *ngIf="control['food'].errors && control['food'].errors['required']">Food/Drink is required</p>
+            </mat-error>
+          </mat-form-field>
+          <button type="submit" [disabled]="nutritionForm.invalid" (click)="getNutritionData()" mat-raised-button color="success">Search</button>
+        </form>
+      </mat-card-content>
+    </div>
+    <mat-card-content *ngIf="success" class="text-center">
+      <h5 class="subtitle fw-semibold mt-3">Name: {{nutritionDatas[0].name | titlecase}}</h5>
+      <h5 class="subtitle fw-semibold">Serving Size: {{nutritionDatas[0].serving_size_g}} g</h5>
+      <h5 class="subtitle fw-semibold">Calories: {{nutritionDatas[0].calories | number : '1.1-1'}} kcal</h5>
+      <h5 class="subtitle fw-semibold">Carbohydrates: {{nutritionDatas[0].carbohydrates_total_g | number : '1.1-1'}} g</h5>
+      <h5 class="subtitle fw-semibold">Protein: {{nutritionDatas[0].protein_g | number : '1.1-1'}} g</h5>
+      <h5 class="subtitle fw-semibold">Total Fat: {{nutritionDatas[0].fat_total_g | number : '1.1-1'}} g</h5>
+      <h5 class="subtitle fw-semibold">Saturated Fat: {{nutritionDatas[0].fat_saturated_g | number : '1.1-1'}} g</h5>
+      <h5 class="subtitle fw-semibold">Sugar: {{nutritionDatas[0].sugar_g | number : '1.1-1'}} g</h5>
+      <h5 class="subtitle fw-semibold">Fiber: {{nutritionDatas[0].fiber_g | number : '1.1-1'}} g</h5>
+      <h5 class="subtitle fw-semibold">Potassium: {{nutritionDatas[0].potassium_mg | number : '1.1-1'}} mg</h5>
+      <h5 class="subtitle fw-semibold">Sodium: {{nutritionDatas[0].sodium_mg | number : '1.1-1'}} mg</h5>
+      <h5 class="subtitle fw-semibold">Cholesterol: {{nutritionDatas[0].cholesterol_mg | number : '1.1-1'}} mg</h5>
+    </mat-card-content>
+  </mat-card>
+</div>
